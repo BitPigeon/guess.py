@@ -1,7 +1,5 @@
 import time, random
 import sys, os
-import readline
-from colorama import init, Fore, Back, Style
 from pynput.keyboard import Key, Controller, Listener
 
 init()
