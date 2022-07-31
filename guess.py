@@ -1,16 +1,32 @@
 import time, random
+import sys, os
 from colorama import init, Fore, Back, Style
+from pynput.keyboard import Key, Controller, Listener
 
 init()
+keyboard = Controller()
+
+skip = False
+
+def on_release(key):
+    global skip
+    if key == Key.right:
+        skip = True
 
 def typestr(strtotype, randomrange=[0.1, 0.3], end="\n"):
+    global skip
     for letter in strtotype:
         print(letter, end="")
-        time.sleep(random.uniform(randomrange[0], randomrange[1]))
+        sys.stdout.flush()
+        if not skip:
+            time.sleep(random.uniform(randomrange[0], randomrange[1]))
     print(end, end="")
+    skip = False
 
+listener = Listener(on_release=on_release)
+listener.start()
 
-print("Welcome to guess.py, a Guess My Number game. See it on github https://github.com/desvasicek/guess.py. Report bugs at https://github.com/desvasicek/guess.py/issues\n")
+print("Welcome to guess.py, a Guess My Number game. \n\n- See it on github https://github.com/desvasicek/guess.py. \n\n- Report bugs at https://github.com/desvasicek/guess.py/issues. \n\n- Press right arrow key to skip typing animation.\n\n")
 print(f"COMPUTER:", end=" ")
 typestr("I'm thinking of a number from 1 to 100. Can you guess it?", [0.01, 0.15])
 number = random.randint(0, 100)
@@ -41,15 +57,21 @@ while in_program:
                         print(f"COMPUTER:", end=" ")
                         typestr("I think there was an error. Try restarting the program.", [0.01, 0.15])
                 elif int(guess) > 100:
+                    print("YOU:", end=" ")
+                    typestr(guess)
                     print(f"COMPUTER:", end=" ")
                     typestr("Sorry. The number has to be less than 100.", [0.01, 0.15])
                 elif int(guess) < 0:
+                    print("YOU:", end=" ")
+                    typestr(guess)
                     print(f"COMPUTER:", end=" ")
                     typestr("Sorry. The number has to be more than 0.", [0.01, 0.15])
                 else:
                     print(f"COMPUTER:", end=" ")
                     typestr("I think there was an error. Try restarting the program.", [0.01, 0.15])
             except ValueError:
+                print("YOU:", end=" ")
+                typestr(guess)
                 print(f"COMPUTER:", end=" ")
                 typestr("Your guess has to be a number.", [0.01, 0.15])     
         except:
