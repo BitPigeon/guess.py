@@ -14,11 +14,16 @@
 
 `guess.py`, a classic Guess My Number game.
 
+## How to use
+1. Make sure python 3 is installed
+2. Install pynput `pip install pynput`
+3. Run the script `python guess.py`
+
 ## Tested on
 
-| Raspberry Pi     |
-|------------------|
-| Stable           | 
+| Raspberry Pi     | Linux              |
+|------------------|--------------------|
+| Stable           | Stable             |
 
 ## Tested with
 
