@@ -1,5 +1,11 @@
 # `guess.py`
 
+[![python](https://img.shields.io/badge/language-python-blue)](https://python.org)
+[![license](https://img.shields.io/github/license/desvasicek/guess.py)](LICENSE.md)
+[![version](https://img.shields.io/github/v/release/desvasicek/guess.py)](https://github.com/desvasicek/guess.py/releases)
+[![files](https://img.shields.io/github/directory-file-count/desvasicek/guess.py)](https://github.com/desvasicek/guess.py)
+[![size](https://img.shields.io/github/size/desvasicek/guess.py)](https://github.com/desvasicek/guess.py)
+
 `guess.py`, a classic Guess My Number game.
 
 ## Tested on
@@ -18,4 +24,3 @@
 
 
 
-[![64f50491-c3be-45cc-802b-07efb6d16947](https://user-images.githubusercontent.com/84301435/182033424-58f387a2-9844-451a-b14b-502e2b80e220.png)](https://python.org)
