@@ -2,7 +2,6 @@ import time, random
 import sys, os
 from pynput.keyboard import Key, Controller, Listener
 
-init()
 keyboard = Controller()
 
 skip = False
