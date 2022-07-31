@@ -2,6 +2,7 @@ import time, random
 import sys, os
 from pynput.keyboard import Key, Controller, Listener
 
+
 keyboard = Controller()
 
 skip = False
@@ -24,7 +25,7 @@ def typestr(strtotype, randomrange=[0.1, 0.3], end="\n"):
 listener = Listener(on_release=on_release)
 listener.start()
 
-print("Welcome to guess.py, a Guess My Number game. \n\n- See it on github https://github.com/desvasicek/guess.py. \n\n- Report bugs at https://github.com/desvasicek/guess.py/issues. \n\n- Press right arrow key to skip typing animation.\n\n")
+print("Welcome to guess.py, a Guess My Number game. \n- See it on github at https://github.com/desvasicek/guess.py. \n- Report bugs at https://github.com/desvasicek/guess.py/issues.\n\n")
 print(f"COMPUTER:", end=" ")
 typestr("I'm thinking of a number from 1 to 100. Can you guess it?", [0.01, 0.15])
 number = random.randint(0, 100)
