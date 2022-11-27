@@ -28,7 +28,7 @@ listener.start()
 playing_game = True
 in_program = True
 while in_program:
-    print("Welcome to guess.py, a Guess My Number game. \n- See it on github at https://github.com/desvasicek/guess.py. \n- Report bugs at https://github.com/desvasicek/guess.py/issues.\n\n")
+    print("Welcome to guess.py, a Guess My Number game. \n- See it on github at https://github.com/TheRealPenguin12/guess.py. \n- Report bugs at https://github.com/TheRealPenguin12/guess.py/issues.\n\n")
     print(f"COMPUTER:", end=" ")
     typestr("I'm thinking of a number from 1 to 100. Can you guess it?", [0.01, 0.15])
     number = random.randint(0, 100)
